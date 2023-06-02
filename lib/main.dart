@@ -1,48 +1,18 @@
 import 'package:flutter/material.dart';
+import 'src/cadastro.dart';
+import 'src/login.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class App extends StatelessWidget {
+  const App({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-//inicio da barra
-          title: const Text(
-            "Overlord",
-            style: TextStyle(
-              fontFamily: "roboto",
-              fontSize: 30,
-            ),
-          ),
-          centerTitle: true,
-          foregroundColor: Colors.white,
-          backgroundColor: Colors.black,
-        ),
-//fim da barra
-        body: Column(
-          children: [
-            Image(
-              width: 1000,
-              image: AssetImage('assets/ainz.png'),
-            ),
-            Container(
-              child: Column(
-                children: [
-                  Icon(Icons.star, color: Colors.purple),
-                  Text("07/03/2001")
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return MaterialApp(routes: {
+      '/login': (context) => Login(),
+      '/cadastro': (context) => Cadastro()
+    }, initialRoute: '/login');
   }
 }
