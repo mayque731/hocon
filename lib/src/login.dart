@@ -66,7 +66,7 @@ class _Login extends State<Login> {
                   onPressed: () {
                     // Ação do botão de login
                     if (_formKey.currentState!.validate()) {
-                      Navigator.pushNamed(context, '/cadastro');
+                      Navigator.pushNamed(context, '/home');
                     }
                   },
                   child: Text('Logar'),
