@@ -29,6 +29,26 @@ class _HomeState extends State<Home> {
               child: Center(
                 child: Text('home'),
               ),
+            ),
+            BottomNavigationBar(
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.list),
+                  label: 'To do',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.filter_vintage),
+                  label: 'Wardrobe',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'Profile',
+                )
+              ],
             )
           ],
         ),
