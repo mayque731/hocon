@@ -33,6 +33,7 @@ class _HomeState extends State<Home> {
             BottomNavigationBar(
               items: [
                 BottomNavigationBarItem(
+                  backgroundColor: Colors.black,
                   icon: Icon(Icons.home),
                   label: 'Home',
                 ),
