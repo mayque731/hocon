@@ -8,6 +8,10 @@ class Geladeira extends StatefulWidget {
   _GeladeiraState createState() => _GeladeiraState();
 }
 
+final List<String> itens = <String>['Arroz', 'Miojo', 'Pringles', 'Peras'];
+
+final List<int> quantias = <int>[1, 4, 6, 7];
+
 class _GeladeiraState extends State<Geladeira> {
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +21,7 @@ class _GeladeiraState extends State<Geladeira> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: const Text(
-            "Geladeira",
+            "Estoque",
             style: TextStyle(
               fontFamily: "roboto",
               fontSize: 30,
@@ -27,8 +31,35 @@ class _GeladeiraState extends State<Geladeira> {
         body: Column(
           children: [
             Expanded(
-              child: Center(
-                child: Text('geladeira'),
+              child: Column(
+                children: [
+                  ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: itens.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        height: 50,
+                        color: Colors.green,
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text('${itens[index]} : ${quantias[index]}'),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.greenAccent),
+                                  onPressed: () {},
+                                  child: Text('+')),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.redAccent),
+                                  onPressed: () {},
+                                  child: Text('-')),
+                            ]),
+                      );
+                    },
+                  )
+                ],
               ),
             ),
             Container(

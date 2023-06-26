@@ -22,6 +22,6 @@ class App extends StatelessWidget {
           '/geladeira': (context) => Geladeira(),
           '/perfil': (context) => Perfil()
         },
-        initialRoute: '/afazer');
+        initialRoute: '/login');
   }
 }

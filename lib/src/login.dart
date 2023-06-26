@@ -34,7 +34,7 @@ class _Login extends State<Login> {
                 TextFormField(
                   controller: userController,
                   decoration: InputDecoration(
-                    labelText: 'Nome de usuário',
+                    labelText: 'Usuario: mayque/kassio',
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -49,7 +49,7 @@ class _Login extends State<Login> {
                 TextFormField(
                   controller: senhaController,
                   decoration: InputDecoration(
-                    labelText: 'Senha',
+                    labelText: 'Senha: senha123',
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -66,7 +66,7 @@ class _Login extends State<Login> {
                   onPressed: () {
                     // Ação do botão de login
                     if (_formKey.currentState!.validate()) {
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.pushNamed(context, '/afazer');
                     }
                   },
                   child: Text('Logar'),

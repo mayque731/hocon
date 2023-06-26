@@ -88,6 +88,7 @@ class _CadastroState extends State<Cadastro> {
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               // Ação para cadastrar o usuário
+                              Navigator.pushNamed(context, '/login');
                             }
                           },
                           child: Text('Cadastrar'),
@@ -97,19 +98,6 @@ class _CadastroState extends State<Cadastro> {
                   ),
                 ),
               ),
-            ),
-            ListView(
-              shrinkWrap: true,
-              children: [
-                // Conteúdo da ListView aqui
-                ListTile(
-                  title: Text('Item 1'),
-                ),
-                ListTile(
-                  title: Text('Item 2'),
-                ),
-                // Adicione mais itens conforme necessário
-              ],
             ),
           ],
         ),

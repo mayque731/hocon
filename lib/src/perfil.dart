@@ -27,8 +27,50 @@ class _PerfilState extends State<Perfil> {
         body: Column(
           children: [
             Expanded(
-              child: Center(
-                child: Text('perfil'),
+              child: Column(
+                children: [
+                  Icon(Icons.photo, size: 150),
+                  Text('Foto de perfil',
+                      style: TextStyle(fontFamily: "roboto", fontSize: 30)),
+                  Container(height: 40),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.green, fixedSize: Size(200, 50)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/perfil');
+                    },
+                    child: Text('Mudar Nome'),
+                    //Icon(Icons.view_comfortable_rounded),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.green, fixedSize: Size(200, 50)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/perfil');
+                    },
+                    child: Text('Mudar email'),
+                    //Icon(Icons.view_comfortable_rounded),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.green, fixedSize: Size(200, 50)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/perfil');
+                    },
+                    child: Text('Mudar numero'),
+                    //Icon(Icons.view_comfortable_rounded),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.redAccent, fixedSize: Size(200, 50)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    child: Text('Sair'),
+                    //Icon(Icons.view_comfortable_rounded),
+                  ),
+                  Container()
+                ],
               ),
             ),
             Container(

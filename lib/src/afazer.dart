@@ -8,6 +8,15 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
+//todo
+final List<String> tarefas = <String>[
+  'cortar grama',
+  'trabalho mobile',
+  'academia',
+  'assistir BM'
+];
+
+@override
 class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,8 +36,23 @@ class _HomeState extends State<Home> {
         body: Column(
           children: [
             Expanded(
-              child: Center(
-                child: Text('todo list'),
+              child: Column(
+                children: [
+                  //inicio
+                  ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: tarefas.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        height: 50,
+                        color: Colors.green,
+                        child: Center(child: Text('${tarefas[index]}')),
+                      );
+                    },
+                  )
+                  //fim
+                ],
               ),
             ),
             Container(
@@ -53,7 +77,7 @@ class _HomeState extends State<Home> {
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(primary: Colors.black),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/geladeira');
+                        Navigator.pushNamed(context, '/perfil');
                       },
                       child: Icon(Icons.person),
                     ),
